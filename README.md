@@ -34,6 +34,12 @@ Optional online feed settings live in `config/threat-feeds.json`. Key-required o
 - Windows for the Electron installer build.
 - Linux/macOS/Windows for the CLI.
 
+## Download Windows EXE
+
+Download the Windows installer directly from the GitHub release:
+
+[Download Phishing URL Detector Setup 2.0.0.exe](https://github.com/whitedevil200/Phising-URL-Detector/releases/download/V1.0/Phishing.URL.Detector.Setup.2.0.0.exe)
+
 ## Install
 
 ```bash
