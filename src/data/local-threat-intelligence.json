@@ -1,0 +1,2004 @@
+{
+  "schemaVersion": 2,
+  "databaseVersion": "local-2026-05-29",
+  "generatedAt": "2026-05-29T19:09:52.188Z",
+  "config": {
+    "sources": {
+      "downloads": true,
+      "phishtank": false,
+      "openphish": true,
+      "urlhaus": false,
+      "googleSafeBrowsing": false
+    },
+    "phishtankConfigured": false,
+    "urlhausConfigured": false,
+    "googleSafeBrowsingConfigured": false
+  },
+  "sourcePaths": {
+    "phishingDatabase": "Downloads/Phishing.Database-master/Phishing.Database-master",
+    "legitPhishCsv": "Downloads/LegitPhish Dataset/url_features_extracted1.csv",
+    "phiusiilCsv": "Downloads/phiusiil+phishing+url+dataset/PhiUSIIL_Phishing_URL_Dataset.csv"
+  },
+  "indexFiles": {
+    "activeDomains": "intelligence-index/activeDomains.sha256.bin",
+    "activeIps": "intelligence-index/activeIps.sha256.bin",
+    "activeUrlHashes": "intelligence-index/activeUrlHashes.sha256.bin",
+    "historicalDomains": "intelligence-index/historicalDomains.sha256.bin",
+    "historicalIps": "intelligence-index/historicalIps.sha256.bin",
+    "historicalUrlHashes": "intelligence-index/historicalUrlHashes.sha256.bin"
+  },
+  "counts": {
+    "activeDomains": 391437,
+    "activeIps": 7117,
+    "activeUrlHashes": 789272,
+    "historicalDomains": 1,
+    "historicalIps": 5186,
+    "historicalUrlHashes": 1
+  },
+  "sources": {
+    "activeDomains": {
+      "Phishing.Database active domains": 391437
+    },
+    "activeIps": {
+      "Phishing.Database active IPs": 7117
+    },
+    "activeUrlHashes": {
+      "Phishing.Database active links": 788972,
+      "OpenPhish community feed": 300
+    },
+    "historicalDomains": {
+      "Phishing.Database inactive domains": 1
+    },
+    "historicalIps": {
+      "Phishing.Database inactive IPs": 5186
+    },
+    "historicalUrlHashes": {
+      "Phishing.Database inactive links": 1
+    }
+  },
+  "refreshFailures": [],
+  "models": [
+    {
+      "name": "LegitPhish Dataset",
+      "source": "Downloads/LegitPhish Dataset/url_features_extracted1.csv",
+      "rows": 101218,
+      "phishingRows": 63678,
+      "legitimateRows": 37540,
+      "phishingLabel": "0",
+      "legitimateLabel": "1",
+      "baselinePhishingRate": 0.6291,
+      "features": [
+        {
+          "name": "url_length",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "21-50",
+              "support": 86175,
+              "phishingRate": 0.5948,
+              "lift": 0.9455,
+              "weight": 0
+            },
+            {
+              "bucket": "51-80",
+              "support": 11378,
+              "phishingRate": 0.9822,
+              "lift": 1.5613,
+              "weight": 5.6501
+            },
+            {
+              "bucket": "81-120",
+              "support": 659,
+              "phishingRate": 0.8801,
+              "lift": 1.399,
+              "weight": 4.0161
+            },
+            {
+              "bucket": "1-20",
+              "support": 2444,
+              "phishingRate": 0.0454,
+              "lift": 0.0722,
+              "weight": 0
+            },
+            {
+              "bucket": "121+",
+              "support": 562,
+              "phishingRate": 0.9804,
+              "lift": 1.5584,
+              "weight": 5.621
+            }
+          ]
+        },
+        {
+          "name": "has_ip_address",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 52139,
+              "phishingRate": 0.28,
+              "lift": 0.4451,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 49079,
+              "phishingRate": 1,
+              "lift": 1.5895,
+              "weight": 5.9341
+            }
+          ]
+        },
+        {
+          "name": "dot_count",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "2-3",
+              "support": 65753,
+              "phishingRate": 0.4395,
+              "lift": 0.6986,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 890,
+              "phishingRate": 0.7944,
+              "lift": 1.2627,
+              "weight": 2.6442
+            },
+            {
+              "bucket": "4-7",
+              "support": 34404,
+              "phishingRate": 0.9854,
+              "lift": 1.5663,
+              "weight": 5.7007
+            },
+            {
+              "bucket": "8+",
+              "support": 170,
+              "phishingRate": 1,
+              "lift": 1.5895,
+              "weight": 5.9341
+            }
+          ]
+        },
+        {
+          "name": "https_flag",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 41058,
+              "phishingRate": 0.0858,
+              "lift": 0.1364,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 60160,
+              "phishingRate": 0.9999,
+              "lift": 1.5894,
+              "weight": 5.9328
+            }
+          ]
+        },
+        {
+          "name": "token_count",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "4-7",
+              "support": 57184,
+              "phishingRate": 0.3472,
+              "lift": 0.5519,
+              "weight": 0
+            },
+            {
+              "bucket": "8+",
+              "support": 43987,
+              "phishingRate": 0.9952,
+              "lift": 1.5819,
+              "weight": 5.857
+            },
+            {
+              "bucket": "2-3",
+              "support": 46,
+              "phishingRate": 1,
+              "lift": 1.5895,
+              "weight": 5.9341
+            }
+          ]
+        },
+        {
+          "name": "subdomain_count",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 41157,
+              "phishingRate": 0.2256,
+              "lift": 0.3586,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 3801,
+              "phishingRate": 0.9516,
+              "lift": 1.5126,
+              "weight": 5.1596
+            },
+            {
+              "bucket": "2-3",
+              "support": 56201,
+              "phishingRate": 0.9028,
+              "lift": 1.435,
+              "weight": 4.3783
+            },
+            {
+              "bucket": "4-7",
+              "support": 59,
+              "phishingRate": 0.6949,
+              "lift": 1.1046,
+              "weight": 1.0528
+            }
+          ]
+        },
+        {
+          "name": "query_param_count",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 100757,
+              "phishingRate": 0.6274,
+              "lift": 0.9973,
+              "weight": 0
+            },
+            {
+              "bucket": "4-7",
+              "support": 216,
+              "phishingRate": 1,
+              "lift": 1.5895,
+              "weight": 5.9341
+            },
+            {
+              "bucket": "2-3",
+              "support": 232,
+              "phishingRate": 0.9957,
+              "lift": 1.5827,
+              "weight": 5.8652
+            }
+          ]
+        },
+        {
+          "name": "tld_length",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "1-20",
+              "support": 99918,
+              "phishingRate": 0.6243,
+              "lift": 0.9923,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 1300,
+              "phishingRate": 1,
+              "lift": 1.5895,
+              "weight": 5.9341
+            }
+          ]
+        },
+        {
+          "name": "path_length",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "1-20",
+              "support": 49801,
+              "phishingRate": 0.9957,
+              "lift": 1.5827,
+              "weight": 5.865
+            },
+            {
+              "bucket": "21-50",
+              "support": 13131,
+              "phishingRate": 0.9795,
+              "lift": 1.557,
+              "weight": 5.6063
+            },
+            {
+              "bucket": "51-80",
+              "support": 879,
+              "phishingRate": 0.901,
+              "lift": 1.4322,
+              "weight": 4.3505
+            },
+            {
+              "bucket": "121+",
+              "support": 247,
+              "phishingRate": 0.996,
+              "lift": 1.5831,
+              "weight": 5.8693
+            },
+            {
+              "bucket": "81-120",
+              "support": 217,
+              "phishingRate": 0.8756,
+              "lift": 1.3918,
+              "weight": 3.9433
+            },
+            {
+              "bucket": "0",
+              "support": 36943,
+              "phishingRate": 0.0001,
+              "lift": 0.0001,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "has_hyphen_in_domain",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 4342,
+              "phishingRate": 0.3595,
+              "lift": 0.5715,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 96876,
+              "phishingRate": 0.6412,
+              "lift": 1.0192,
+              "weight": 0.1933
+            }
+          ]
+        },
+        {
+          "name": "number_of_digits",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 38643,
+              "phishingRate": 0.0595,
+              "lift": 0.0946,
+              "weight": 0
+            },
+            {
+              "bucket": "1-20",
+              "support": 60916,
+              "phishingRate": 0.9803,
+              "lift": 1.5583,
+              "weight": 5.6195
+            },
+            {
+              "bucket": "21-50",
+              "support": 1350,
+              "phishingRate": 1,
+              "lift": 1.5895,
+              "weight": 5.9341
+            },
+            {
+              "bucket": "51-80",
+              "support": 101,
+              "phishingRate": 1,
+              "lift": 1.5895,
+              "weight": 5.9341
+            },
+            {
+              "bucket": "81-120",
+              "support": 194,
+              "phishingRate": 1,
+              "lift": 1.5895,
+              "weight": 5.9341
+            }
+          ]
+        },
+        {
+          "name": "tld_popularity",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 33228,
+              "phishingRate": 0.2196,
+              "lift": 0.349,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 67990,
+              "phishingRate": 0.8293,
+              "lift": 1.3181,
+              "weight": 3.2024
+            }
+          ]
+        },
+        {
+          "name": "suspicious_file_extension",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 86378,
+              "phishingRate": 0.5654,
+              "lift": 0.8988,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 14840,
+              "phishingRate": 0.9997,
+              "lift": 1.5891,
+              "weight": 5.9298
+            }
+          ]
+        },
+        {
+          "name": "domain_name_length",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "1-20",
+              "support": 97706,
+              "phishingRate": 0.6273,
+              "lift": 0.997,
+              "weight": 0
+            },
+            {
+              "bucket": "21-50",
+              "support": 2212,
+              "phishingRate": 0.4932,
+              "lift": 0.784,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 1300,
+              "phishingRate": 1,
+              "lift": 1.5895,
+              "weight": 5.9341
+            }
+          ]
+        },
+        {
+          "name": "percentage_numeric_chars",
+          "phishingSeen": 63678,
+          "legitimateSeen": 37540,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 38643,
+              "phishingRate": 0.0595,
+              "lift": 0.0946,
+              "weight": 0
+            },
+            {
+              "bucket": "0.66+",
+              "support": 62575,
+              "phishingRate": 0.9809,
+              "lift": 1.5591,
+              "weight": 5.6278
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PhiUSIIL URL Dataset",
+      "source": "Downloads/phiusiil+phishing+url+dataset/PhiUSIIL_Phishing_URL_Dataset.csv",
+      "rows": 235795,
+      "phishingRows": 100945,
+      "legitimateRows": 134850,
+      "phishingLabel": "0",
+      "legitimateLabel": "1",
+      "baselinePhishingRate": 0.4281,
+      "features": [
+        {
+          "name": "URLLength",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "21-50",
+              "support": 191739,
+              "phishingRate": 0.3732,
+              "lift": 0.8718,
+              "weight": 0
+            },
+            {
+              "bucket": "1-20",
+              "support": 21563,
+              "phishingRate": 0.3202,
+              "lift": 0.748,
+              "weight": 0
+            },
+            {
+              "bucket": "81-120",
+              "support": 6983,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "121+",
+              "support": 2994,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "51-80",
+              "support": 12516,
+              "phishingRate": 0.999,
+              "lift": 2.3334,
+              "weight": 9.1337
+            }
+          ]
+        },
+        {
+          "name": "DomainLength",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "21-50",
+              "support": 101107,
+              "phishingRate": 0.5085,
+              "lift": 1.1878,
+              "weight": 1.2862
+            },
+            {
+              "bucket": "1-20",
+              "support": 131290,
+              "phishingRate": 0.3514,
+              "lift": 0.8208,
+              "weight": 0
+            },
+            {
+              "bucket": "51-80",
+              "support": 3267,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "81-120",
+              "support": 131,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "IsDomainIP",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 235157,
+              "phishingRate": 0.4266,
+              "lift": 0.9964,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 638,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "CharContinuationRate",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0.66+",
+              "support": 183259,
+              "phishingRate": 0.3244,
+              "lift": 0.7577,
+              "weight": 0
+            },
+            {
+              "bucket": "0.36-0.65",
+              "support": 44575,
+              "phishingRate": 0.7557,
+              "lift": 1.7652,
+              "weight": 5.241
+            },
+            {
+              "bucket": "0.16-0.35",
+              "support": 7921,
+              "phishingRate": 0.9827,
+              "lift": 2.2955,
+              "weight": 8.8736
+            },
+            {
+              "bucket": "0.06-0.15",
+              "support": 35,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "TLDLegitimateProb",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0.36-0.65",
+              "support": 112554,
+              "phishingRate": 0.3889,
+              "lift": 0.9084,
+              "weight": 0
+            },
+            {
+              "bucket": "0.01-0.05",
+              "support": 103823,
+              "phishingRate": 0.5228,
+              "lift": 1.2213,
+              "weight": 1.5156
+            },
+            {
+              "bucket": "0.06-0.15",
+              "support": 18793,
+              "phishingRate": 0.1207,
+              "lift": 0.282,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 625,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "URLCharProb",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0.06-0.15",
+              "support": 180446,
+              "phishingRate": 0.3101,
+              "lift": 0.7243,
+              "weight": 0
+            },
+            {
+              "bucket": "0.01-0.05",
+              "support": 55349,
+              "phishingRate": 0.8129,
+              "lift": 1.8987,
+              "weight": 6.1561
+            }
+          ]
+        },
+        {
+          "name": "NoOfSubDomain",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 178406,
+              "phishingRate": 0.3562,
+              "lift": 0.832,
+              "weight": 0
+            },
+            {
+              "bucket": "2-3",
+              "support": 41472,
+              "phishingRate": 0.5195,
+              "lift": 1.2134,
+              "weight": 1.4617
+            },
+            {
+              "bucket": "0",
+              "support": 13983,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "4-7",
+              "support": 1925,
+              "phishingRate": 0.9688,
+              "lift": 2.2631,
+              "weight": 8.6516
+            }
+          ]
+        },
+        {
+          "name": "HasObfuscation",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 235310,
+              "phishingRate": 0.4269,
+              "lift": 0.9972,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 485,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "NoOfObfuscatedChar",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 235310,
+              "phishingRate": 0.4269,
+              "lift": 0.9972,
+              "weight": 0
+            },
+            {
+              "bucket": "1-20",
+              "support": 449,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "21-50",
+              "support": 28,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "ObfuscationRatio",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 235310,
+              "phishingRate": 0.4269,
+              "lift": 0.9972,
+              "weight": 0
+            },
+            {
+              "bucket": "0.06-0.15",
+              "support": 262,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "0.01-0.05",
+              "support": 191,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "0.16-0.35",
+              "support": 32,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "NoOfLettersInURL",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1-20",
+              "support": 179511,
+              "phishingRate": 0.2995,
+              "lift": 0.6995,
+              "weight": 0
+            },
+            {
+              "bucket": "21-50",
+              "support": 44626,
+              "phishingRate": 0.7962,
+              "lift": 1.8598,
+              "weight": 5.8894
+            },
+            {
+              "bucket": "51-80",
+              "support": 8038,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "81-120",
+              "support": 1697,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "0",
+              "support": 66,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "121+",
+              "support": 1857,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "LetterRatioInURL",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0.36-0.65",
+              "support": 179232,
+              "phishingRate": 0.3555,
+              "lift": 0.8303,
+              "weight": 0
+            },
+            {
+              "bucket": "0.16-0.35",
+              "support": 23165,
+              "phishingRate": 0.2473,
+              "lift": 0.5777,
+              "weight": 0
+            },
+            {
+              "bucket": "0.66+",
+              "support": 32741,
+              "phishingRate": 0.9452,
+              "lift": 2.2079,
+              "weight": 8.2736
+            },
+            {
+              "bucket": "0",
+              "support": 66,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "0.06-0.15",
+              "support": 588,
+              "phishingRate": 0.835,
+              "lift": 1.9505,
+              "weight": 6.5109
+            }
+          ]
+        },
+        {
+          "name": "NoOfDegitsInURL",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 184334,
+              "phishingRate": 0.2878,
+              "lift": 0.6722,
+              "weight": 0
+            },
+            {
+              "bucket": "1-20",
+              "support": 47164,
+              "phishingRate": 0.9245,
+              "lift": 2.1596,
+              "weight": 7.9426
+            },
+            {
+              "bucket": "21-50",
+              "support": 3479,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "81-120",
+              "support": 352,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "121+",
+              "support": 123,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "51-80",
+              "support": 343,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "DegitRatioInURL",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 184334,
+              "phishingRate": 0.2878,
+              "lift": 0.6722,
+              "weight": 0
+            },
+            {
+              "bucket": "0.06-0.15",
+              "support": 23821,
+              "phishingRate": 0.9201,
+              "lift": 2.1493,
+              "weight": 7.8721
+            },
+            {
+              "bucket": "0.16-0.35",
+              "support": 14707,
+              "phishingRate": 0.9825,
+              "lift": 2.2949,
+              "weight": 8.8696
+            },
+            {
+              "bucket": "0.01-0.05",
+              "support": 10803,
+              "phishingRate": 0.8705,
+              "lift": 2.0334,
+              "weight": 7.0783
+            },
+            {
+              "bucket": "0.36-0.65",
+              "support": 2121,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "NoOfEqualsInURL",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 230394,
+              "phishingRate": 0.4147,
+              "lift": 0.9687,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 2760,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "2-3",
+              "support": 1554,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "4-7",
+              "support": 720,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "8+",
+              "support": 367,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "NoOfQMarkInURL",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 229665,
+              "phishingRate": 0.4128,
+              "lift": 0.9643,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 5572,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "2-3",
+              "support": 556,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "NoOfAmpersandInURL",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 234908,
+              "phishingRate": 0.4259,
+              "lift": 0.995,
+              "weight": 0
+            },
+            {
+              "bucket": "2-3",
+              "support": 199,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "1",
+              "support": 296,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "8+",
+              "support": 287,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "4-7",
+              "support": 105,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "NoOfOtherSpecialCharsInURL",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1-20",
+              "support": 234835,
+              "phishingRate": 0.4258,
+              "lift": 0.9946,
+              "weight": 0
+            },
+            {
+              "bucket": "21-50",
+              "support": 915,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "51-80",
+              "support": 26,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "SpacialCharRatioInURL",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0.01-0.05",
+              "support": 122880,
+              "phishingRate": 0.205,
+              "lift": 0.4788,
+              "weight": 0
+            },
+            {
+              "bucket": "0.06-0.15",
+              "support": 109567,
+              "phishingRate": 0.6611,
+              "lift": 1.5442,
+              "weight": 3.7275
+            },
+            {
+              "bucket": "0.16-0.35",
+              "support": 3342,
+              "phishingRate": 0.9937,
+              "lift": 2.3212,
+              "weight": 9.0498
+            }
+          ]
+        },
+        {
+          "name": "IsHTTPS",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 184539,
+              "phishingRate": 0.2693,
+              "lift": 0.629,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 51256,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "LineOfCode",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "121+",
+              "support": 150241,
+              "phishingRate": 0.1043,
+              "lift": 0.2436,
+              "weight": 0
+            },
+            {
+              "bucket": "1-20",
+              "support": 62285,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "21-50",
+              "support": 6741,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "81-120",
+              "support": 11715,
+              "phishingRate": 0.9763,
+              "lift": 2.2804,
+              "weight": 8.7706
+            },
+            {
+              "bucket": "51-80",
+              "support": 4813,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "LargestLineLength",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "121+",
+              "support": 188262,
+              "phishingRate": 0.2842,
+              "lift": 0.6639,
+              "weight": 0
+            },
+            {
+              "bucket": "81-120",
+              "support": 13061,
+              "phishingRate": 0.993,
+              "lift": 2.3194,
+              "weight": 9.0376
+            },
+            {
+              "bucket": "21-50",
+              "support": 22990,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "51-80",
+              "support": 11482,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "HasTitle",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 203081,
+              "phishingRate": 0.3368,
+              "lift": 0.7867,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 32714,
+              "phishingRate": 0.9949,
+              "lift": 2.3239,
+              "weight": 9.0682
+            }
+          ]
+        },
+        {
+          "name": "DomainTitleMatchScore",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 113701,
+              "phishingRate": 0.7129,
+              "lift": 1.6653,
+              "weight": 4.5574
+            },
+            {
+              "bucket": "0.66+",
+              "support": 122094,
+              "phishingRate": 0.1628,
+              "lift": 0.3804,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "URLTitleMatchScore",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 107186,
+              "phishingRate": 0.6955,
+              "lift": 1.6246,
+              "weight": 4.2782
+            },
+            {
+              "bucket": "0.66+",
+              "support": 128258,
+              "phishingRate": 0.2031,
+              "lift": 0.4744,
+              "weight": 0
+            },
+            {
+              "bucket": "0.36-0.65",
+              "support": 253,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            },
+            {
+              "bucket": "0.16-0.35",
+              "support": 79,
+              "phishingRate": 1,
+              "lift": 2.3359,
+              "weight": 9.1503
+            }
+          ]
+        },
+        {
+          "name": "HasFavicon",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 150492,
+              "phishingRate": 0.612,
+              "lift": 1.4296,
+              "weight": 2.9427
+            },
+            {
+              "bucket": "1",
+              "support": 85303,
+              "phishingRate": 0.1036,
+              "lift": 0.2421,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "Robots",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 62849,
+              "phishingRate": 0.1058,
+              "lift": 0.2472,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 172946,
+              "phishingRate": 0.5452,
+              "lift": 1.2736,
+              "weight": 1.8738
+            }
+          ]
+        },
+        {
+          "name": "IsResponsive",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 147257,
+              "phishingRate": 0.2176,
+              "lift": 0.5083,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 88538,
+              "phishingRate": 0.7782,
+              "lift": 1.8177,
+              "weight": 5.6013
+            }
+          ]
+        },
+        {
+          "name": "NoOfURLRedirect",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 204331,
+              "phishingRate": 0.4191,
+              "lift": 0.9789,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 31464,
+              "phishingRate": 0.4867,
+              "lift": 1.1368,
+              "weight": 0.9373
+            }
+          ]
+        },
+        {
+          "name": "NoOfSelfRedirect",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 226338,
+              "phishingRate": 0.4204,
+              "lift": 0.9819,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 9457,
+              "phishingRate": 0.6132,
+              "lift": 1.4324,
+              "weight": 2.9615
+            }
+          ]
+        },
+        {
+          "name": "HasDescription",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 132002,
+              "phishingRate": 0.731,
+              "lift": 1.7074,
+              "weight": 4.8455
+            },
+            {
+              "bucket": "1",
+              "support": 103793,
+              "phishingRate": 0.043,
+              "lift": 0.1003,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "NoOfPopup",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 222384,
+              "phishingRate": 0.4516,
+              "lift": 1.0548,
+              "weight": 0.3752
+            },
+            {
+              "bucket": "1",
+              "support": 7968,
+              "phishingRate": 0.0369,
+              "lift": 0.0862,
+              "weight": 0
+            },
+            {
+              "bucket": "2-3",
+              "support": 2914,
+              "phishingRate": 0.0611,
+              "lift": 0.1427,
+              "weight": 0
+            },
+            {
+              "bucket": "8+",
+              "support": 1135,
+              "phishingRate": 0.007,
+              "lift": 0.0165,
+              "weight": 0
+            },
+            {
+              "bucket": "4-7",
+              "support": 1394,
+              "phishingRate": 0.033,
+              "lift": 0.0771,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "NoOfiFrame",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 23490,
+              "phishingRate": 0.121,
+              "lift": 0.2826,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 157197,
+              "phishingRate": 0.6109,
+              "lift": 1.427,
+              "weight": 2.9248
+            },
+            {
+              "bucket": "8+",
+              "support": 12258,
+              "phishingRate": 0.0053,
+              "lift": 0.0124,
+              "weight": 0
+            },
+            {
+              "bucket": "2-3",
+              "support": 29912,
+              "phishingRate": 0.0593,
+              "lift": 0.1385,
+              "weight": 0
+            },
+            {
+              "bucket": "4-7",
+              "support": 12938,
+              "phishingRate": 0.018,
+              "lift": 0.0421,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "HasExternalFormSubmit",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 225423,
+              "phishingRate": 0.4459,
+              "lift": 1.0415,
+              "weight": 0.2846
+            },
+            {
+              "bucket": "1",
+              "support": 10372,
+              "phishingRate": 0.0416,
+              "lift": 0.0971,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "HasSocialNet",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 128138,
+              "phishingRate": 0.7838,
+              "lift": 1.8308,
+              "weight": 5.6911
+            },
+            {
+              "bucket": "1",
+              "support": 107657,
+              "phishingRate": 0.0047,
+              "lift": 0.0111,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "HasSubmitButton",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 97690,
+              "phishingRate": 0.0877,
+              "lift": 0.2049,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 138105,
+              "phishingRate": 0.6689,
+              "lift": 1.5624,
+              "weight": 3.8523
+            }
+          ]
+        },
+        {
+          "name": "HasHiddenFields",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 89083,
+              "phishingRate": 0.1057,
+              "lift": 0.2469,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 146712,
+              "phishingRate": 0.6239,
+              "lift": 1.4573,
+              "weight": 3.1322
+            }
+          ]
+        },
+        {
+          "name": "HasPasswordField",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 211682,
+              "phishingRate": 0.4512,
+              "lift": 1.0539,
+              "weight": 0.3692
+            },
+            {
+              "bucket": "1",
+              "support": 24113,
+              "phishingRate": 0.2255,
+              "lift": 0.5268,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "Bank",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 29967,
+              "phishingRate": 0.1831,
+              "lift": 0.4276,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 205828,
+              "phishingRate": 0.4638,
+              "lift": 1.0833,
+              "weight": 0.5708
+            }
+          ]
+        },
+        {
+          "name": "Pay",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 179910,
+              "phishingRate": 0.5273,
+              "lift": 1.2317,
+              "weight": 1.5873
+            },
+            {
+              "bucket": "1",
+              "support": 55885,
+              "phishingRate": 0.1087,
+              "lift": 0.254,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "Crypto",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 230260,
+              "phishingRate": 0.4357,
+              "lift": 1.0178,
+              "weight": 0.1223
+            },
+            {
+              "bucket": "1",
+              "support": 5535,
+              "phishingRate": 0.1102,
+              "lift": 0.2574,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "HasCopyrightInfo",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "1",
+              "support": 114779,
+              "phishingRate": 0.0504,
+              "lift": 0.1178,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 121016,
+              "phishingRate": 0.7863,
+              "lift": 1.8367,
+              "weight": 5.7314
+            }
+          ]
+        },
+        {
+          "name": "NoOfImage",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "8+",
+              "support": 120711,
+              "phishingRate": 0.0299,
+              "lift": 0.0698,
+              "weight": 0
+            },
+            {
+              "bucket": "2-3",
+              "support": 8439,
+              "phishingRate": 0.4631,
+              "lift": 1.0817,
+              "weight": 0.5597
+            },
+            {
+              "bucket": "0",
+              "support": 85521,
+              "phishingRate": 0.9848,
+              "lift": 2.3005,
+              "weight": 8.9077
+            },
+            {
+              "bucket": "1",
+              "support": 8865,
+              "phishingRate": 0.7382,
+              "lift": 1.7243,
+              "weight": 4.9613
+            },
+            {
+              "bucket": "4-7",
+              "support": 12259,
+              "phishingRate": 0.2172,
+              "lift": 0.5074,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "NoOfCSS",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "8+",
+              "support": 58958,
+              "phishingRate": 0.0079,
+              "lift": 0.0185,
+              "weight": 0
+            },
+            {
+              "bucket": "2-3",
+              "support": 35397,
+              "phishingRate": 0.256,
+              "lift": 0.598,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 21783,
+              "phishingRate": 0.3945,
+              "lift": 0.9215,
+              "weight": 0
+            },
+            {
+              "bucket": "4-7",
+              "support": 35920,
+              "phishingRate": 0.0484,
+              "lift": 0.1132,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 83737,
+              "phishingRate": 0.9683,
+              "lift": 2.2618,
+              "weight": 8.643
+            }
+          ]
+        },
+        {
+          "name": "NoOfJS",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "8+",
+              "support": 105724,
+              "phishingRate": 0.0415,
+              "lift": 0.097,
+              "weight": 0
+            },
+            {
+              "bucket": "4-7",
+              "support": 25078,
+              "phishingRate": 0.1226,
+              "lift": 0.2864,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 79311,
+              "phishingRate": 0.9819,
+              "lift": 2.2937,
+              "weight": 8.8614
+            },
+            {
+              "bucket": "2-3",
+              "support": 12775,
+              "phishingRate": 0.4146,
+              "lift": 0.9684,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 12907,
+              "phishingRate": 0.7983,
+              "lift": 1.8648,
+              "weight": 5.9235
+            }
+          ]
+        },
+        {
+          "name": "NoOfSelfRef",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "8+",
+              "support": 121192,
+              "phishingRate": 0.0058,
+              "lift": 0.0135,
+              "weight": 0
+            },
+            {
+              "bucket": "0",
+              "support": 84345,
+              "phishingRate": 0.9399,
+              "lift": 2.1955,
+              "weight": 8.1891
+            },
+            {
+              "bucket": "4-7",
+              "support": 4100,
+              "phishingRate": 0.1422,
+              "lift": 0.3322,
+              "weight": 0
+            },
+            {
+              "bucket": "2-3",
+              "support": 8670,
+              "phishingRate": 0.6491,
+              "lift": 1.5163,
+              "weight": 3.5365
+            },
+            {
+              "bucket": "1",
+              "support": 17488,
+              "phishingRate": 0.8438,
+              "lift": 1.9711,
+              "weight": 6.6517
+            }
+          ]
+        },
+        {
+          "name": "NoOfEmptyRef",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "0",
+              "support": 163349,
+              "phishingRate": 0.6011,
+              "lift": 1.404,
+              "weight": 2.7671
+            },
+            {
+              "bucket": "2-3",
+              "support": 19504,
+              "phishingRate": 0.0357,
+              "lift": 0.0835,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 21332,
+              "phishingRate": 0.0487,
+              "lift": 0.1137,
+              "weight": 0
+            },
+            {
+              "bucket": "4-7",
+              "support": 15261,
+              "phishingRate": 0.0338,
+              "lift": 0.079,
+              "weight": 0
+            },
+            {
+              "bucket": "8+",
+              "support": 16349,
+              "phishingRate": 0.0314,
+              "lift": 0.0733,
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "name": "NoOfExternalRef",
+          "phishingSeen": 100945,
+          "legitimateSeen": 134850,
+          "buckets": [
+            {
+              "bucket": "8+",
+              "support": 123890,
+              "phishingRate": 0.0127,
+              "lift": 0.0297,
+              "weight": 0
+            },
+            {
+              "bucket": "4-7",
+              "support": 11920,
+              "phishingRate": 0.3267,
+              "lift": 0.7631,
+              "weight": 0
+            },
+            {
+              "bucket": "1",
+              "support": 23885,
+              "phishingRate": 0.9547,
+              "lift": 2.23,
+              "weight": 8.4248
+            },
+            {
+              "bucket": "0",
+              "support": 55710,
+              "phishingRate": 0.9919,
+              "lift": 2.317,
+              "weight": 9.0211
+            },
+            {
+              "bucket": "2-3",
+              "support": 20390,
+              "phishingRate": 0.8539,
+              "lift": 1.9947,
+              "weight": 6.8135
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

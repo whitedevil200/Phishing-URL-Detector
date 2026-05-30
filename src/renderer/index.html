@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing URL Detector</title>
+    <link rel="stylesheet" href="./styles/tailwind.css" />
+  </head>
+  <body class="min-h-screen overflow-hidden bg-[#030b15] text-slate-100">
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 3 20 6.6v5.2c0 4.9-3.3 8.1-8 9.7-4.7-1.6-8-4.8-8-9.7V6.6L12 3Z" />
+              <path d="m9.5 12 1.7 1.7 3.5-4.1" />
+            </svg>
+          </div>
+          <div>
+            <h1>Phishing URL<br />Detector</h1>
+          </div>
+        </div>
+
+        <nav class="side-nav">
+          <button class="side-item active" data-section="dashboard">
+            <span data-icon="grid"></span>
+            Dashboard
+          </button>
+          <button class="side-item" data-section="history">
+            <span data-icon="clock"></span>
+            URL Scan History
+          </button>
+          <button class="side-item" data-section="bulk">
+            <span data-icon="layers"></span>
+            Bulk Scan
+          </button>
+          <button class="side-item" data-section="domain">
+            <span data-icon="globe"></span>
+            Domain WHOIS
+          </button>
+          <button class="side-item" data-section="threat">
+            <span data-icon="shield"></span>
+            Threat Intelligence
+          </button>
+          <button class="side-item" data-section="settings">
+            <span data-icon="settings"></span>
+            Settings
+          </button>
+          <button class="side-item" data-section="about">
+            <span data-icon="info"></span>
+            About Us
+          </button>
+        </nav>
+
+        <div class="protection-card">
+          <div class="flex items-center gap-3">
+            <span class="mini-shield"></span>
+            <strong>Protection Enabled</strong>
+          </div>
+          <p>Real-time phishing protection is active and up to date.</p>
+          <div class="protection-meta">
+            <span>Engine Version: <b>3.2.1</b></span>
+            <span>Last Updated: <b>May 24, 2025 09:15 AM</b></span>
+            <i></i>
+          </div>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <div class="titlebar">
+          <div></div>
+          <div class="window-actions">
+            <button id="minimizeButton" aria-label="Minimize">−</button>
+            <button id="maximizeButton" aria-label="Maximize">□</button>
+            <button id="closeButton" aria-label="Close">×</button>
+          </div>
+        </div>
+
+        <section class="command-row no-vt">
+          <div class="url-command">
+            <label for="urlInput">Enter URL to analyze</label>
+            <div class="url-box">
+              <span data-icon="link"></span>
+              <input id="urlInput" placeholder="https://secure-login-update.com/verify-account" />
+              <button id="clearButton" aria-label="Clear URL">×</button>
+            </div>
+          </div>
+          <button id="scanButton" class="scan-cta">
+            <span data-icon="target"></span>
+            Scan URL
+          </button>
+          <div class="top-tools">
+            <button id="menuButton" aria-label="Menu"><span data-icon="menu"></span></button>
+          </div>
+        </section>
+
+        <section id="dashboardPanel" class="dashboard-grid">
+          <article class="risk-card">
+            <div class="card-heading">
+              <h2>Risk Score</h2>
+              <span data-icon="info"></span>
+            </div>
+            <div class="risk-stage">
+              <div id="riskOrb" class="risk-sphere"></div>
+              <div class="risk-value">
+                <strong id="riskScore">--</strong>
+                <span>/ 100</span>
+                <b id="riskLabel">Not scanned</b>
+              </div>
+              <div class="sphere-base"></div>
+            </div>
+            <div id="summaryText" class="danger-callout">
+              Enter a URL to begin analysis.
+            </div>
+            <div class="risk-level">
+              <span>Risk Level</span>
+              <strong id="verdictText">Unknown</strong>
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </article>
+
+          <article class="analysis-card">
+            <div class="card-heading">
+              <h2>Analysis Findings</h2>
+              <span data-icon="info"></span>
+            </div>
+            <div class="analysis-table">
+              <div class="analysis-head">
+                <span>Indicator</span>
+                <span>Result</span>
+                <span>Severity</span>
+              </div>
+              <div id="findingsBody" class="analysis-body">
+                <div class="empty-row">No scan results yet.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="whois-section">
+            <div class="whois-title">
+              <span data-icon="globe"></span>
+              <h2>WHOIS Lookup</h2>
+            </div>
+            <div id="whoisCards" class="whois-grid"></div>
+          </article>
+        </section>
+
+        <section id="featurePanel" class="feature-panel hidden">
+          <div class="feature-header">
+            <div>
+              <p id="featureKicker">Tool</p>
+              <h2 id="featureTitle">Section</h2>
+            </div>
+            <button id="featureAction" class="feature-action hidden">Run</button>
+          </div>
+          <div id="featureBody" class="feature-body"></div>
+        </section>
+
+        <footer class="footerbar">
+          <div class="footer-left">
+            <span class="made-by">Made by <b>Advaitik Intelligence</b></span>
+            <button
+              id="instagramButton"
+              class="instagram-link"
+              type="button"
+              aria-label="Open Advaitik Intelligence on Instagram"
+            >
+              <span data-icon="instagram"></span>
+              @advaitik_intelligence
+            </button>
+            <span data-icon="shield"></span>
+            Database Status:
+            <b>Up to date</b>
+            <span data-icon="clock"></span>
+            Next Update:
+            <em>00:45:12</em>
+          </div>
+          <div class="footer-right">
+            <label>Auto Scan: <b>On</b><input id="fetchSite" type="checkbox" checked /></label>
+            <button id="exportHtml" class="export-btn"><span data-icon="download"></span> Export Report</button>
+            <button id="exportJson" class="export-caret">⌄</button>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <pre id="rawReport" class="hidden">No report yet.</pre>
+    <script src="./main.js"></script>
+  </body>
+</html>

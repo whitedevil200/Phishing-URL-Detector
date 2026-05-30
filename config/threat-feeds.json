@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "downloads": true,
+    "phishtank": false,
+    "openphish": true,
+    "urlhaus": false,
+    "googleSafeBrowsing": false
+  },
+  "phishtankAppKey": "",
+  "urlhausAuthKey": "",
+  "googleSafeBrowsingApiKey": "",
+  "refresh": {
+    "timeoutMs": 20000,
+    "userAgent": "PhishingURLDetector/2.0 local-threat-refresh"
+  }
+}

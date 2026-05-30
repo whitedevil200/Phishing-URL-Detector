@@ -1,0 +1,370 @@
+{
+  "source": "https://github.com/vaibhavbichave/Phishing-URL-Detection/blob/master/phishing.csv",
+  "generatedAt": "2026-05-27T10:54:43.117Z",
+  "totalRows": 11054,
+  "phishingRows": 4897,
+  "legitimateRows": 6157,
+  "baselinePhishingRate": 0.443,
+  "features": {
+    "UsingIP": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 1925,
+      "legitimateRisk": 1867,
+      "support": 3792,
+      "phishingRateWhenRisky": 0.5076,
+      "lift": 1.1459,
+      "pointWeight": 0.78
+    },
+    "LongURL": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 4162,
+      "legitimateRisk": 4933,
+      "support": 9095,
+      "phishingRateWhenRisky": 0.4576,
+      "lift": 1.033,
+      "pointWeight": 0.18
+    },
+    "ShortURL": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 514,
+      "legitimateRisk": 930,
+      "support": 1444,
+      "phishingRateWhenRisky": 0.356,
+      "lift": 0.8035,
+      "pointWeight": 0
+    },
+    "Symbol@": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 837,
+      "legitimateRisk": 818,
+      "support": 1655,
+      "phishingRateWhenRisky": 0.5057,
+      "lift": 1.1416,
+      "pointWeight": 0.75
+    },
+    "Redirecting//": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 561,
+      "legitimateRisk": 867,
+      "support": 1428,
+      "phishingRateWhenRisky": 0.3929,
+      "lift": 0.8868,
+      "pointWeight": 0
+    },
+    "PrefixSuffix-": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 4897,
+      "legitimateRisk": 4692,
+      "support": 9589,
+      "phishingRateWhenRisky": 0.5107,
+      "lift": 1.1528,
+      "pointWeight": 0.81
+    },
+    "SubDomains": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 4087,
+      "legitimateRisk": 2897,
+      "support": 6984,
+      "phishingRateWhenRisky": 0.5852,
+      "lift": 1.321,
+      "pointWeight": 1.71
+    },
+    "HTTPS": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 4196,
+      "legitimateRisk": 527,
+      "support": 4723,
+      "phishingRateWhenRisky": 0.8884,
+      "lift": 2.0054,
+      "pointWeight": 5.34
+    },
+    "DomainRegLen": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 2689,
+      "legitimateRisk": 4699,
+      "support": 7388,
+      "phishingRateWhenRisky": 0.364,
+      "lift": 0.8216,
+      "pointWeight": 0
+    },
+    "Favicon": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 909,
+      "legitimateRisk": 1144,
+      "support": 2053,
+      "phishingRateWhenRisky": 0.4428,
+      "lift": 0.9995,
+      "pointWeight": 0
+    },
+    "NonStdPort": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 734,
+      "legitimateRisk": 768,
+      "support": 1502,
+      "phishingRateWhenRisky": 0.4887,
+      "lift": 1.1031,
+      "pointWeight": 0.55
+    },
+    "HTTPSDomainURL": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 714,
+      "legitimateRisk": 1081,
+      "support": 1795,
+      "phishingRateWhenRisky": 0.3978,
+      "lift": 0.8979,
+      "pointWeight": 0
+    },
+    "RequestURL": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 2675,
+      "legitimateRisk": 1820,
+      "support": 4495,
+      "phishingRateWhenRisky": 0.5951,
+      "lift": 1.3433,
+      "pointWeight": 1.83
+    },
+    "AnchorURL": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 4747,
+      "legitimateRisk": 3871,
+      "support": 8618,
+      "phishingRateWhenRisky": 0.5508,
+      "lift": 1.2434,
+      "pointWeight": 1.29
+    },
+    "LinksInScriptTags": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 4131,
+      "legitimateRisk": 4274,
+      "support": 8405,
+      "phishingRateWhenRisky": 0.4915,
+      "lift": 1.1094,
+      "pointWeight": 0.58
+    },
+    "ServerFormHandler": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 4500,
+      "legitimateRisk": 4700,
+      "support": 9200,
+      "phishingRateWhenRisky": 0.4891,
+      "lift": 1.1041,
+      "pointWeight": 0.55
+    },
+    "InfoEmail": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 930,
+      "legitimateRisk": 1083,
+      "support": 2013,
+      "phishingRateWhenRisky": 0.462,
+      "lift": 1.0429,
+      "pointWeight": 0.23
+    },
+    "AbnormalURL": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 603,
+      "legitimateRisk": 1025,
+      "support": 1628,
+      "phishingRateWhenRisky": 0.3704,
+      "lift": 0.8361,
+      "pointWeight": 0
+    },
+    "WebsiteForwarding": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 4295,
+      "legitimateRisk": 5480,
+      "support": 9775,
+      "phishingRateWhenRisky": 0.4394,
+      "lift": 0.9918,
+      "pointWeight": 0
+    },
+    "StatusBarCust": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 657,
+      "legitimateRisk": 658,
+      "support": 1315,
+      "phishingRateWhenRisky": 0.4996,
+      "lift": 1.1278,
+      "pointWeight": 0.68
+    },
+    "DisableRightClick": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 225,
+      "legitimateRisk": 251,
+      "support": 476,
+      "phishingRateWhenRisky": 0.4727,
+      "lift": 1.067,
+      "pointWeight": 0.36
+    },
+    "UsingPopupWindow": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 947,
+      "legitimateRisk": 1190,
+      "support": 2137,
+      "phishingRateWhenRisky": 0.4431,
+      "lift": 1.0003,
+      "pointWeight": 0
+    },
+    "IframeRedirection": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 443,
+      "legitimateRisk": 569,
+      "support": 1012,
+      "phishingRateWhenRisky": 0.4377,
+      "lift": 0.9881,
+      "pointWeight": 0
+    },
+    "AgeofDomain": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 2631,
+      "legitimateRisk": 2557,
+      "support": 5188,
+      "phishingRateWhenRisky": 0.5071,
+      "lift": 1.1447,
+      "pointWeight": 0.77
+    },
+    "DNSRecording": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 1717,
+      "legitimateRisk": 1725,
+      "support": 3442,
+      "phishingRateWhenRisky": 0.4988,
+      "lift": 1.126,
+      "pointWeight": 0.67
+    },
+    "WebsiteTraffic": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 3390,
+      "legitimateRisk": 1833,
+      "support": 5223,
+      "phishingRateWhenRisky": 0.6491,
+      "lift": 1.4651,
+      "pointWeight": 2.47
+    },
+    "PageRank": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 3884,
+      "legitimateRisk": 4316,
+      "support": 8200,
+      "phishingRateWhenRisky": 0.4737,
+      "lift": 1.0692,
+      "pointWeight": 0.37
+    },
+    "GoogleIndex": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 927,
+      "legitimateRisk": 612,
+      "support": 1539,
+      "phishingRateWhenRisky": 0.6023,
+      "lift": 1.3597,
+      "pointWeight": 1.91
+    },
+    "LinksPointingToPage": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 3122,
+      "legitimateRisk": 3582,
+      "support": 6704,
+      "phishingRateWhenRisky": 0.4657,
+      "lift": 1.0512,
+      "pointWeight": 0.27
+    },
+    "StatsReport": {
+      "riskyValues": [
+        "-1",
+        "0"
+      ],
+      "phishingRisk": 838,
+      "legitimateRisk": 711,
+      "support": 1549,
+      "phishingRateWhenRisky": 0.541,
+      "lift": 1.2212,
+      "pointWeight": 1.18
+    }
+  }
+}
