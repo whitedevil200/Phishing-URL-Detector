@@ -40,6 +40,15 @@ Download the Windows installer directly from the GitHub release:
 
 [Download Phishing URL Detector Setup 2.0.0.exe](https://github.com/whitedevil200/Phising-URL-Detector/releases/download/V1.0/Phishing.URL.Detector.Setup.2.0.0.exe)
 
+## Preview 
+
+<img width="1913" height="1012" alt="2026-06-09_23-42-54" src="https://github.com/user-attachments/assets/72d93f40-ba9a-4306-9205-208980f12da2" />
+
+<img width="1904" height="1003" alt="2026-06-09_23-44-53" src="https://github.com/user-attachments/assets/89d8734b-b83c-4da7-85f8-1f08f9035b92" />
+
+<img width="1897" height="1011" alt="2026-06-09_23-44-08" src="https://github.com/user-attachments/assets/b2913e76-5171-458a-9a22-1840e42182bc" />
+
+
 ## Install
 
 ```bash
